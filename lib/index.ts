@@ -96,6 +96,11 @@ export default function (opts: Options) {
         if (data.error) {
             if (opts.isDebug) {
                 session.error.message = data.error.message;
+                if (null !== session.error.message && typeof session.error.message == 'object') {
+                    (session.error.message as any).toString = function () {
+                        return JSON.stringify(this)
+                    }
+                }
                 session.error['code'] = data.error.code;
                 session.reject(session.error);
             } else {
