@@ -1,6 +1,6 @@
 import { Sandbox } from 'nisp'
 import { Server } from 'http'
-import * as WebSocket from 'ws'
+import * as WebSocket from '../types/ws'
 import { extend } from './utils'
 
 export type Options = {
@@ -8,15 +8,15 @@ export type Options = {
     url?: string
     sandbox?: Sandbox,
     onOpen?: (ws: WebSocket, req: any) => any
-    onError?: (err) => void
-    onRequest?: (req, res) => any
-    error?: (err) => any
+    onError?: (err: any) => void
+    onRequest?: (req: any, res: any) => any
+    error?: (err: any) => any
     isAutoReconnect?: boolean
     binaryType?: 'arraybuffer'
     retrySpan?: number
     timeout?: number
-    encode?:(data) => any
-    decode?:(data) => any
+    encode?:(data: any) => any
+    decode?:(data: any) => any
     wsOptions?: WebSocket.IServerOptions
     isDebug?: boolean
 }
