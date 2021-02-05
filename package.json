@@ -1,6 +1,6 @@
 {
   "name": "@mtfe/nisper-fix",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "A RPC lib based on websocket protocol and nisp language",
   "main": "lib/index",
   "scripts": {
